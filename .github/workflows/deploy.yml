@@ -1,7 +1,8 @@
 name: Deploy to Cloudflare Pages
 
-# Push to main -> deploy the repo root to the "masonnix" Cloudflare Pages project.
-# .assetsignore keeps repo cruft (README, CLAUDE, .git, .github) out of the deploy.
+# Push to main -> deploy the site to the "masonnix" Cloudflare Pages project.
+# We stage public files into dist/ (excluding repo cruft) because
+# `wrangler pages deploy` does NOT honor .assetsignore.
 on:
   push:
     branches: [main]
@@ -15,9 +16,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Stage public files
+        run: |
+          mkdir dist
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='README.md' \
+            --exclude='CLAUDE.md' \
+            --exclude='CLAUDE.local.md' \
+            --exclude='dist' \
+            ./ dist/
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=masonnix --branch=main --commit-dirty=true
+          command: pages deploy dist --project-name=masonnix --branch=main --commit-dirty=true
