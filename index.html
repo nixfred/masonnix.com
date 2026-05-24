@@ -512,6 +512,43 @@
             box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
         }
 
+        /* Available For */
+        .avail-lead {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 720px;
+        }
+
+        .avail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .avail-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            border-radius: 14px;
+            padding: 1rem 1.25rem;
+            transition: all 0.3s;
+        }
+
+        .avail-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .avail-item h3 {
+            font-size: 1.05rem;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .avail-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav {
@@ -578,6 +615,7 @@
             }
 
             .highlight-card,
+            .avail-item,
             .featured-box,
             .featured-content,
             .callout-box,
@@ -677,6 +715,7 @@
 
     <nav>
         <a href="#highlights">Highlights</a>
+        <a href="#available">Book Me</a>
         <a href="#experience">Experience</a>
         <a href="#impact">Impact</a>
         <a href="#contact">Contact</a>
@@ -751,6 +790,37 @@
         </div>
     </section>
 
+    <section id="available">
+        <h2 class="section-title">Available For Work Now</h2>
+        <p class="avail-lead">Building toward the editing room. Hire-able today for the work that tells stories on a deadline. Atlanta and LA. If you need any of this, I can start now.</p>
+        <div class="avail-grid">
+            <div class="avail-item">
+                <h3>Voice Work</h3>
+                <p>VO for games, animation, narration, and commercial. Voices.com profile, trained in drama and theater.</p>
+            </div>
+            <div class="avail-item">
+                <h3>On Camera and Background</h3>
+                <p>Film and TV work in Atlanta now, LA soon. HBO set experience and IMDb credits.</p>
+            </div>
+            <div class="avail-item">
+                <h3>MC and Live Hosting</h3>
+                <p>Events, fundraisers, gaming nights, weddings. Three years reading and holding capacity rooms.</p>
+            </div>
+            <div class="avail-item">
+                <h3>Production Assistant</h3>
+                <p>Day rates on set. I know the call sheet, the pace, and how to be useful under pressure.</p>
+            </div>
+            <div class="avail-item">
+                <h3>Game Master for Hire</h3>
+                <p>Custom one-shots and campaigns, written and run live. 100+ already under my belt.</p>
+            </div>
+            <div class="avail-item">
+                <h3>Producing and Content</h3>
+                <p>Streams, fundraisers, original content. I raised $4,000 on a 24-hour solo-produced broadcast.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="experience">
         <h2 class="section-title">Experience</h2>
         <div class="timeline">
@@ -813,8 +883,8 @@
     </section>
 
     <footer id="contact">
-        <h2>Hiring for Post?</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">For post supervisors, editors, and assistants hiring up: I'm available. Atlanta now, LA soon. Let's talk.</p>
+        <h2>Let's Make Something</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Booking voice, on-camera, MC, PA, and game-master work right now, Atlanta and LA. Building toward the post-production bay for the long haul. Either way, let's talk.</p>
         <a href="mailto:masonlnix@gmail.com" class="cta-button">Get In Touch</a>
         <p style="color: var(--text-muted); margin-top: 3rem; font-size: 0.85rem;">© 2026 Mason L. Nix • Woodstock, GA</p>
     </footer>
