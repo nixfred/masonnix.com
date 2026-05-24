@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mason L. Nix | Event Coordinator & Host</title>
-    <meta name="description" content="Mason Nix - Event Coordinator, MC, and Community Builder based in Woodstock, GA">
+    <title>Mason L. Nix | Editor, Storyteller, Host</title>
+    <meta name="description" content="Mason L. Nix. Editor and storyteller chasing the post-production bay. HBO Staircase credit, 100+ live campaigns, $4K charity stream. Atlanta now, LA next.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -147,11 +147,75 @@
             }
         }
 
+        .hero .hook {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            font-weight: 500;
+            color: var(--text);
+            max-width: 720px;
+            margin-bottom: 0.75rem;
+            animation: fadeInUp 1s ease-out 0.15s both;
+        }
+
         .hero .tagline {
             font-size: 1.25rem;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        /* Staircase callout */
+        .callout {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .callout-box {
+            background: var(--gradient);
+            padding: 2px;
+            border-radius: 20px;
+        }
+
+        .callout-inner {
+            background: var(--bg-card);
+            border-radius: 18px;
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .callout-inner .badge {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        .callout-inner .eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        .callout-inner h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .callout-inner p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            .callout-inner {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         .hero .contact-bar {
@@ -471,7 +535,8 @@
 
     <section class="hero">
         <h1><span class="grad">Mason L. Nix</span></h1>
-        <p class="tagline">Event Coordinator • MC • Community Builder</p>
+        <p class="hook">Creator of Worlds. Orator of Stories Untold. Destroyer of Taco Bell.</p>
+        <p class="tagline">Editor, storyteller, host. Atlanta now, LA next.</p>
         <div class="contact-bar">
             <a href="tel:4049032119">
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -492,38 +557,46 @@
         </div>
     </section>
 
+    <div class="callout">
+        <div class="callout-box">
+            <div class="callout-inner">
+                <div class="badge">🎬</div>
+                <div>
+                    <div class="eyebrow">On Set</div>
+                    <h3>Production Assistant, "The Staircase" (HBO)</h3>
+                    <p>Worked on set with Toni Collette and the core production team. My first taste of long-form scripted work, and the reason I'm chasing the edit bay next.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section id="highlights">
-        <h2 class="section-title">Career Highlights</h2>
+        <h2 class="section-title">What I Bring</h2>
         <div class="highlights-grid">
             <div class="highlight-card">
-                <div class="icon">🎤</div>
-                <h3>Event Hosting</h3>
-                <p>MC for max-capacity events including New Year's Eve celebrations, driving record revenue and customer engagement</p>
-            </div>
-            <div class="highlight-card">
-                <div class="icon">🎮</div>
-                <h3>Gaming Community</h3>
-                <p>Hosted weekly gaming tournaments and wrote D&D adventures for two years, building loyal memberships</p>
-            </div>
-            <div class="highlight-card">
-                <div class="icon">💜</div>
-                <h3>Charity Streaming</h3>
-                <p>Organized 24-hour charity stream raising $4,000 for Extra Life Children's Miracle Network</p>
+                <div class="icon">🐉</div>
+                <h3>Storytelling</h3>
+                <p>100+ original campaigns written and run live. Two years of real-time narrative craft for an audience that came back every week.</p>
             </div>
             <div class="highlight-card">
                 <div class="icon">🎬</div>
-                <h3>Film Production</h3>
-                <p>Production assistant on "Staircase" - coordinated talent including Toni Collette, managed logistics under pressure</p>
+                <h3>On Set</h3>
+                <p>Production Assistant credit on HBO's "The Staircase." Worked with Toni Collette and the core production team.</p>
             </div>
             <div class="highlight-card">
-                <div class="icon">📈</div>
-                <h3>Membership Growth</h3>
-                <p>Consistently onboarded new members while upselling existing ones during high-volume business periods</p>
+                <div class="icon">🎤</div>
+                <h3>Live Audience</h3>
+                <p>MC for capacity rooms. Three years of reading a crowd and holding it in real time, at scale.</p>
             </div>
             <div class="highlight-card">
-                <div class="icon">🔧</div>
-                <h3>Operations</h3>
-                <p>Maintained equipment, earned forklift certification, and ensured smooth daily operations across departments</p>
+                <div class="icon">💜</div>
+                <h3>Producing</h3>
+                <p>A 24-hour charity stream, on camera and off. $4,000 raised for Extra Life Children's Miracle Network.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">🎙️</div>
+                <h3>Voice and On Camera</h3>
+                <p>Voice acting profile, improv and comedy background. Ready for the booth or the set.</p>
             </div>
         </div>
     </section>
@@ -532,39 +605,30 @@
         <h2 class="section-title">Experience</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <div class="date">June 2021 - Present</div>
-                <h3>Event Coordinator</h3>
+                <div class="date">Oct 2022 to Nov 2022</div>
+                <h3>Production Assistant</h3>
+                <div class="company">"The Staircase" (HBO)</div>
+                <ul>
+                    <li>Worked on set with Toni Collette and the core production team</li>
+                    <li>Saw long-form scripted production run up close, on a real schedule</li>
+                    <li>The credit that pointed me toward the post-production bay</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="date">June 2021 to 2026</div>
+                <h3>MC and Live Storyteller</h3>
                 <div class="company">Blue Ghost</div>
                 <ul>
-                    <li>MC for major events including max-capacity New Year's Eve celebrations</li>
-                    <li>Host weekly gaming tournaments driving monthly paid memberships</li>
-                    <li>Write and run original D&D adventures weekly for two years</li>
-                    <li>Organized 24-hour charity stream raising $4,000 for Extra Life</li>
-                    <li>Create fresh weekly content to retain monthly memberships</li>
-                    <li>Manage equipment maintenance and repairs</li>
+                    <li>MC'd capacity rooms. Learned to read and hold a 500-person audience in real time</li>
+                    <li>Wrote and ran 100+ original D&D campaigns, live and weekly, for two years</li>
+                    <li>Produced a 24-hour charity stream that raised $4,000 for Extra Life</li>
+                    <li>Built weekly programming people came back for, week after week</li>
                 </ul>
             </div>
             <div class="timeline-item">
-                <div class="date">Oct 2022 - Nov 2022</div>
-                <h3>Production Assistant</h3>
-                <div class="company">Staircase (HBO Max)</div>
-                <ul>
-                    <li>Coordinated background actors and managed talent demands</li>
-                    <li>Provided logistical support for Toni Collette and other key personnel</li>
-                    <li>Handled traffic and crowd control for production</li>
-                    <li>Managed heavy equipment across multiple flights of stairs</li>
-                </ul>
-            </div>
-            <div class="timeline-item">
-                <div class="date">Nov 2020 - June 2021</div>
-                <h3>General Merchandise Expert</h3>
-                <div class="company">Target</div>
-                <ul>
-                    <li>Managed inter-departmental communication across all merchandise areas</li>
-                    <li>Earned forklift certification for heavy merchandise handling</li>
-                    <li>Maintained organized warehouse ensuring consistent stock levels</li>
-                    <li>Contributed to positive customer shopping experience</li>
-                </ul>
+                <div class="date">Earlier</div>
+                <h3>General Merchandise Expert, Target</h3>
+                <div class="company">Nov 2020 to June 2021</div>
             </div>
         </div>
     </section>
@@ -578,11 +642,11 @@
             </div>
             <div class="stat">
                 <div class="stat-number">3+</div>
-                <div class="stat-label">Years Event Hosting</div>
+                <div class="stat-label">Years Live on Mic</div>
             </div>
             <div class="stat">
                 <div class="stat-number">100+</div>
-                <div class="stat-label">D&D Sessions Written</div>
+                <div class="stat-label">Campaigns Written and Run</div>
             </div>
             <div class="stat">
                 <div class="stat-number">24hr</div>
@@ -592,15 +656,15 @@
 
         <div class="featured-box">
             <div class="featured-content">
-                <h3>What Sets Me Apart</h3>
-                <p>I don't just coordinate events—I create experiences. From writing original D&D campaigns to MCing sold-out celebrations, I bring energy, creativity, and genuine connection to everything I do. Whether it's a gaming tournament or a film set with A-list talent, I thrive under pressure and keep things running smoothly.</p>
+                <h3>Why the Edit Bay</h3>
+                <p>I tell stories in three modes: written, hosted, improvised. I wrote 100+ campaigns and ran them live for the same tables every week for two years. I MC'd capacity rooms. I sat on an HBO set with my name on the call sheet. I'm chasing the editing room because that is where the story actually gets cut together. If you are hiring for post-production, I want to talk.</p>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h2>Let's Connect</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">Ready to bring energy and expertise to your team</p>
+        <h2>Hiring for Post?</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">For post supervisors, editors, and assistants hiring up: I'm available. Atlanta now, LA soon. Let's talk.</p>
         <a href="mailto:masonlnix@gmail.com" class="cta-button">Get In Touch</a>
         <p style="color: var(--text-muted); margin-top: 3rem; font-size: 0.85rem;">© 2026 Mason L. Nix • Woodstock, GA</p>
     </footer>
