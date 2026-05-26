@@ -532,6 +532,101 @@
             font-size: 0.9rem;
         }
 
+        /* Opening statement / thesis */
+        .thesis {
+            max-width: 1000px;
+            margin: 0 auto 0.5rem;
+            padding: 0 2rem;
+        }
+
+        .thesis-inner {
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary);
+            border-radius: 14px;
+            padding: 1.75rem 2rem;
+        }
+
+        .thesis .eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        .thesis p {
+            font-size: 1.15rem;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .thesis p + p {
+            margin-top: 0.9rem;
+            color: var(--text-muted);
+            font-size: 1.02rem;
+        }
+
+        .thesis strong {
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+
+        /* Expandable job detail */
+        .timeline-item .summary {
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
+        }
+
+        .job-toggle {
+            background: none;
+            border: 1px solid var(--primary);
+            color: var(--primary-light);
+            font: inherit;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .job-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .job-toggle .chev {
+            transition: transform 0.3s;
+        }
+
+        .timeline-item.open .job-toggle .chev {
+            transform: rotate(180deg);
+        }
+
+        .job-detail {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s ease-out;
+        }
+
+        .timeline-item.open .job-detail {
+            grid-template-rows: 1fr;
+        }
+
+        .job-detail-inner {
+            overflow: hidden;
+        }
+
+        .job-detail .narrative {
+            color: var(--text-muted);
+            padding: 0.9rem 0 0.5rem;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav {
@@ -595,6 +690,24 @@
                 opacity: 1 !important;
                 transform: none !important;
                 page-break-inside: avoid;
+            }
+
+            /* Force every job's detail open and drop the toggles for print */
+            .job-detail {
+                grid-template-rows: 1fr !important;
+            }
+
+            .job-toggle {
+                display: none !important;
+            }
+
+            .thesis,
+            .job-detail {
+                page-break-inside: avoid;
+            }
+
+            .thesis-inner {
+                border-left: 3px solid #111 !important;
             }
 
             .highlight-card,
@@ -729,6 +842,14 @@
         <p class="print-hint">This page is built to print as a full resume. Hit Print Resume above, or Cmd+P / Ctrl+P.</p>
     </section>
 
+    <div class="thesis">
+        <div class="thesis-inner">
+            <div class="eyebrow">The Point</div>
+            <p>Put me anywhere and the work gets done. A film set, a sales floor, or a stage in front of 500 people. I show up on time, I read what the room needs, and I follow through until it is finished.</p>
+            <p>The job changes. <strong>That part never does.</strong> Everything below is the proof.</p>
+        </div>
+    </div>
+
     <div class="callout">
         <div class="callout-box">
             <div class="callout-inner">
@@ -805,31 +926,46 @@
                 <div class="date">June 2021 to Apr 2026</div>
                 <h3>Live Events Host and Organizer</h3>
                 <div class="company">Blue Ghost</div>
-                <ul>
-                    <li>Hosted and ran recurring live events, reading and holding rooms of up to 500 people</li>
-                    <li>Planned, promoted, and ran a weekly event for two years without missing a date</li>
-                    <li>Produced a 24-hour charity stream that raised $4,000 for Extra Life</li>
-                    <li>Built a loyal repeat audience through consistency and Customer experience</li>
-                </ul>
+                <p class="summary">Five years running live events and holding rooms of up to 500 people. The longest and biggest thing I have done, and the place I learned to show up no matter what.</p>
+                <button class="job-toggle" type="button" aria-expanded="false">Read the full story <span class="chev">&#9662;</span></button>
+                <div class="job-detail"><div class="job-detail-inner">
+                    <p class="narrative">This is the job that taught me everything I lead with. Running a weekly event for two years without missing a single date is not luck, it is a system: plan it, promote it, and be the one standing there every time the doors open. When I set a $4,000 charity goal, I locked myself to a 24-hour stream and did not stop until the number was hit.</p>
+                    <ul>
+                        <li>Hosted and ran recurring live events, reading and holding rooms of up to 500 people</li>
+                        <li>Planned, promoted, and ran a weekly event for two years without missing a date</li>
+                        <li>Produced a 24-hour charity stream that raised $4,000 for Extra Life</li>
+                        <li>Built a loyal repeat audience through consistency and Customer experience</li>
+                    </ul>
+                </div></div>
             </div>
             <div class="timeline-item">
                 <div class="date">Oct 2022 to Nov 2022</div>
                 <h3>Production Assistant</h3>
                 <div class="company">"The Staircase" (HBO)</div>
-                <ul>
-                    <li>Worked on set with Toni Collette and the core production team</li>
-                    <li>Supported a working crew on a real schedule under deadline pressure</li>
-                    <li>Learned set protocol and the production chain of command firsthand</li>
-                </ul>
+                <p class="summary">A real credit on a major Atlanta production. I learned how a working set runs from the inside.</p>
+                <button class="job-toggle" type="button" aria-expanded="false">Read the full story <span class="chev">&#9662;</span></button>
+                <div class="job-detail"><div class="job-detail-inner">
+                    <p class="narrative">Atlanta is one of the biggest production towns in the country, and I have already been on set in it. I worked alongside Toni Collette and the core production team, kept pace with a real schedule under deadline pressure, and learned set protocol and the chain of command by doing it, not reading about it.</p>
+                    <ul>
+                        <li>Worked on set with Toni Collette and the core production team</li>
+                        <li>Supported a working crew on a real schedule under deadline pressure</li>
+                        <li>Learned set protocol and the production chain of command firsthand</li>
+                    </ul>
+                </div></div>
             </div>
             <div class="timeline-item">
                 <div class="date">Nov 2020 to June 2021</div>
                 <h3>General Merchandise Expert</h3>
                 <div class="company">Target</div>
-                <ul>
-                    <li>Stocked and maintained the floor in a fast-paced, high-volume store</li>
-                    <li>Helped Customers and kept merchandise standards against a daily quota</li>
-                </ul>
+                <p class="summary">The unglamorous proof. A high-volume retail floor, a daily quota, and Customers to take care of. I showed up for this the same way I show up for everything.</p>
+                <button class="job-toggle" type="button" aria-expanded="false">Read the full story <span class="chev">&#9662;</span></button>
+                <div class="job-detail"><div class="job-detail-inner">
+                    <p class="narrative">Not every job is a stage or a film set, and that is exactly the point. Retail is where you prove you will do the steady, repetitive work and still treat people well at the end of a long shift. I kept the floor stocked and the standards up against a daily quota in a fast, high-volume store.</p>
+                    <ul>
+                        <li>Stocked and maintained the floor in a fast-paced, high-volume store</li>
+                        <li>Helped Customers and kept merchandise standards against a daily quota</li>
+                    </ul>
+                </div></div>
             </div>
         </div>
     </section>
@@ -865,7 +1001,7 @@
 
     <footer id="contact">
         <h2>Let's Get to Work</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">I am available now for full-time work in Atlanta: production crew, operations, Customer-facing, retail, and events. Reliable, hardworking, and ready to start this week. If you are hiring, email me.</p>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">So here is the takeaway: I am the person who shows up, reads the room, and gets it done, wherever you put me. Production crew, operations, Customer-facing, retail, or events, I am available now for full-time work in Atlanta and ready to start this week. Point me at the job and I will outwork the room to learn it.</p>
         <a href="mailto:masonlnix@gmail.com" class="cta-button">Email Me</a>
         <p style="color: var(--text-muted); margin-top: 3rem; font-size: 0.85rem;">© 2026 Mason L. Nix • Atlanta, GA</p>
     </footer>
@@ -884,9 +1020,20 @@
             observer.observe(item);
         });
 
-        // Print Resume button
+        // Expandable job detail
+        document.querySelectorAll('.job-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.timeline-item');
+                const open = item.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                btn.firstChild.textContent = open ? 'Hide the full story ' : 'Read the full story ';
+            });
+        });
+
+        // Print Resume button: open every job so the printed resume is complete
         document.getElementById('printResume').addEventListener('click', (e) => {
             e.preventDefault();
+            document.querySelectorAll('.timeline-item').forEach(item => item.classList.add('open'));
             window.print();
         });
 
